@@ -15,41 +15,25 @@
 </div>
 <div class="main">
     <button class="add-btn">+ Add book</button>
-    <div class="book-container">
-        <div class="book">
-            <div class="book-content">
-                <div>Title</div>
-                <div>Author</div>
-                <div>100 pages</div>
+    <dialog class="add-book-dialog">
+        <form class="add-book-dialog-form">
+            <h1>Add new book</h1>
+            <div class="user-box">
+                <input id="title" type="text" required>
+                <label for="title">Title</label>
             </div>
-            <div class="book-btn-bar">
-                <button class="book-btn-not-read">Not read</button>
-                <button class="book-btn-remove">Remove</button>
+            <div class="user-box">
+                <input id="author" type="text" required>
+                <label for="author">Author</label>
             </div>
-        </div>
-        <div class="book">
-            <div class="book-content">
-                <div>Title</div>
-                <div>Author</div>
-                <div>100 pages</div>
+            <div class="user-box">
+                <input id="pageTotal" type="number" inputmode="numeric" pattern="\d*" required>
+                <label for="pageTotal">Pages</label>
             </div>
-            <div class="book-btn-bar">
-                <button class="book-btn-not-read">Not read</button>
-                <button class="book-btn-remove">Remove</button>
-            </div>
-        </div>
-        <div class="book">
-            <div class="book-content">
-                <div>Title</div>
-                <div>Author</div>
-                <div>100 pages</div>
-            </div>
-            <div class="book-btn-bar">
-                <button class="book-btn-read">Read</button>
-                <button class="book-btn-remove">Remove</button>
-            </div>
-        </div>
-    </div>
+            <button class="add-book-submit-btn" type="button">Submit</button>
+        </form>
+    </dialog>
+    <div class="book-container"></div>
 </div>
 </body>
 </html>

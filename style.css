@@ -53,6 +53,81 @@ body {
     transition: .5s ease;
 }
 
+.add-book-dialog {
+    top: 30%;
+    left: 50%;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--main-background);
+    border: none;
+}
+
+dialog[open] {
+    animation: inout 0.3s ease;
+}
+
+@keyframes inout {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.add-book-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.add-book-dialog-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-book-submit-btn {
+    background-color: #9fff9c;
+    margin-top: 10px;
+}
+
+.add-book-dialog-form h1 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.add-book-dialog-form input {
+    border: none;
+    outline: none;
+    margin: 10px 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+    width: 250px;
+}
+
+.user-box {
+    position: relative;
+    margin: 15px 0;
+}
+
+.add-book-dialog-form .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .5s;
+    pointer-events: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.add-book-dialog-form .user-box input:focus ~ label,
+.add-book-dialog-form .user-box input:valid ~ label {
+    top: -15px;
+    left: 0;
+    font-size: 13px;
+}
+
 .book-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -84,12 +159,20 @@ body {
 
 .book-btn-read,
 .book-btn-not-read,
-.book-btn-remove {
+.book-btn-remove,
+.add-book-submit-btn {
     font-size: 1.4rem;
     width: 100%;
     padding: 10px;
     border-radius: 10px;
     border: none;
+}
+
+.book-btn-read:hover,
+.book-btn-not-read:hover,
+.book-btn-remove:hover,
+.add-book-submit-btn:hover {
+    filter: brightness(90%);
 }
 
 .book-content {
